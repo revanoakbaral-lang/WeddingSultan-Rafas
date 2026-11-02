@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation - Sultan & Rafas</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: #f7f1e9;
+  color: #594536;
+  text-align: center;
+}
+
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(#0007,#0008),
+  url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1000');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 25px;
+}
+
+.cover h1 {
+  font-size: 45px;
+  margin: 20px 0;
+}
+
+button {
+  border: none;
+  padding: 13px 25px;
+  border-radius: 30px;
+  background: #b18b61;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+section {
+  padding: 65px 20px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #96734e;
+  margin-bottom: 20px;
+}
+
+.names {
+  font-size: 38px;
+  margin: 20px 0;
+  color: #a17c52;
+}
+
+.photo {
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 120px 120px 15px 15px;
+  border: 5px solid #d4b994;
+  margin: 15px;
+}
+
+.couple {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 5px 20px #0001;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.time {
+  background: #a88763;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 65px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 145px;
+  height: 180px;
+  object-fit: cover;
+  margin: 8px;
+  border-radius: 12px;
+}
+
+input {
+  margin: 10px;
+  max-width: 90%;
+}
+
+footer {
+  background: #6e5844;
+  color: white;
+  padding: 30px;
+}
+
+#invitation {
+  display: none;
+}
+
+.upload {
+  background: white;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 350px;
+  border-radius: 12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN PEMBUKA -->
+<div class="cover" id="cover">
+  <p>THE WEDDING OF</p>
+  <h1>SULTAN & RAFAS</h1>
+  <p>Kepada Yth. Tamu Undangan</p>
+  <button onclick="openInvitation()">BUKA UNDANGAN</button>
+</div>
+
+<div id="invitation">
+
+<section>
+  <p>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+  <br>
+  <p>Dengan memohon rahmat dan ridho Allah SWT</p>
+  <h2>THE WEDDING</h2>
+  <div class="names">SULTAN & RAFAS</div>
+  <p>Merupakan suatu kehormatan bagi kami apabila Anda berkenan hadir di hari bahagia kami.</p>
+</section>
+
+<section>
+  <h2>Mempelai</h2>
+
+  <div class="couple">
+    <div>
+      <img id="foto1" class="photo"
+      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500">
+      <h2>SULTAN</h2>
+      <p>Putra dari Bapak & Ibu</p>
+    </div>
+
+    <div>
+      <img id="foto2" class="photo"
+      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500">
+      <h2>RAFAS</h2>
+      <p>Putri dari Bapak & Ibu</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Save The Date</h2>
+  <div class="card">
+    <h2>12 Desember 2026</h2>
+    <p>Sabtu</p>
+    <div class="countdown">
+      <div class="time"><b id="days">0</b><br>Hari</div>
+      <div class="time"><b id="hours">0</b><br>Jam</div>
+      <div class="time"><b id="minutes">0</b><br>Menit</div>
+      <div class="time"><b id="seconds">0</b><br>Detik</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Acara Pernikahan</h2>
+
+  <div class="card">
+    <h3>AKAD NIKAH</h3>
+    <br>
+    <p>Sabtu, 12 Desember 2026</p>
+    <p>08.00 WIB - Selesai</p>
+    <br>
+    <p>Tempat: Gedung Pernikahan</p>
+  </div>
+
+  <div class="card">
+    <h3>RESEPSI</h3>
+    <br>
+    <p>Sabtu, 12 Desember 2026</p>
+    <p>11.00 WIB - Selesai</p>
+    <br>
+    <p>Tempat: Gedung Pernikahan</p>
+  </div>
+</section>
+
+<section>
+  <h2>Lokasi Acara</h2>
+  <p>Silakan klik tombol di bawah untuk melihat lokasi.</p>
+  <a id="maps" href="https://maps.google.com" target="_blank">
+    <button>BUKA GOOGLE MAPS</button>
+  </a>
+</section>
+
+<section>
+  <h2>Galeri Kami</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400">
+    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400">
+    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=400">
+  </div>
+</section>
+
+<section>
+  <h2>Konfirmasi Kehadiran</h2>
+  <div class="card">
+    <input id="guest" placeholder="Nama Anda">
+    <br>
+    <button onclick="sendWA()">KONFIRMASI VIA WHATSAPP</button>
+  </div>
+</section>
+
+<section>
+  <h2>Terima Kasih</h2>
+  <p>Merupakan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+  <div class="names">SULTAN & RAFAS</div>
+</section>
+
+<footer>
+  <p>© 2026 SULTAN & RAFAS</p>
+  <p>Created with Love ❤️</p>
+</footer>
+
+</div>
+
+<!-- PANEL PENGATURAN FOTO -->
+<section class="upload">
+  <h3>Pengaturan Foto Mempelai</h3>
+  <p>Ganti foto Sultan:</p>
+  <input type="file" accept="image/*" onchange="changePhoto(event,'foto1')">
+
+  <p>Ganti foto Rafas:</p>
+  <input type="file" accept="image/*" onchange="changePhoto(event,'foto2')">
+
+  <p>Pengaturan ini hanya berlaku di perangkat ini.</p>
+</section>
+
+<audio id="music" loop>
+  <source src="" type="audio/mpeg">
+</audio>
+
+<script>
+
+function openInvitation() {
+  document.getElementById("cover").style.display = "none";
+  document.getElementById("invitation").style.display = "block";
+  document.getElementById("music").play().catch(()=>{});
+}
+
+function changePhoto(event,id) {
+  const file = event.target.files[0];
+  if(file) {
+    document.getElementById(id).src =
+    URL.createObjectURL(file);
+  }
+}
+
+const weddingDate = new Date("December 12, 2026 08:00:00").getTime();
+
+setInterval(function() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if(distance <= 0) {
+    document.getElementById("days").innerHTML = 0;
+    document.getElementById("hours").innerHTML = 0;
+    document.getElementById("minutes").innerHTML = 0;
+    document.getElementById("seconds").innerHTML = 0;
+    return;
+  }
+
+  document.getElementById("days").innerHTML =
+  Math.floor(distance / (1000*60*60*24));
+
+  document.getElementById("hours").innerHTML =
+  Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+
+  document.getElementById("minutes").innerHTML =
+  Math.floor((distance % (1000*60*60))/(1000*60));
+
+  document.getElementById("seconds").innerHTML =
+  Math.floor((distance % (1000*60))/1000);
+
+},1000);
+
+function sendWA() {
+  const name = document.getElementById("guest").value;
+
+  if(!name) {
+    alert("Masukkan nama terlebih dahulu!");
+    return;
+  }
+
+  const message = "Halo, saya " + name +
+  ". Saya ingin mengkonfirmasi kehadiran di pernikahan SULTAN & RAFAS.";
+
+  window.open(
+    "https://wa.me/6281234567890?text=" +
+    encodeURIComponent(message)
+  );
+}
+
+</script>
+
+</body>
+</html>
